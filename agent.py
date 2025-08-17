@@ -1,6 +1,4 @@
 import random
-from symbol import func_type
-
 import numpy as np
 class QLearningAgent:
     def __init__(self,player,alpha = 0.1 ,gamma= 0.9,epsilon = 0.2):
@@ -30,4 +28,5 @@ class QLearningAgent:
             future_q = 0.0
 
         new_q = old_q + self.alpha*(reward+ self.gamma*future_q-old_q)
+
         self.q_table[(state,action)] = new_q
